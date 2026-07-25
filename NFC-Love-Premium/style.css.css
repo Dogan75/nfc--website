@@ -1,0 +1,400 @@
+/* ===========================
+   NFC LOVE PREMIUM
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0d0d0d;
+    color:white;
+    overflow-x:hidden;
+}
+
+.background-blur{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#ff4d88 0%,transparent 40%),
+    radial-gradient(circle at bottom,#8a2be2 0%,transparent 45%);
+    opacity:.18;
+    z-index:-2;
+}
+
+#hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.cover{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-family:'Great Vibes',cursive;
+    font-size:72px;
+    color:white;
+    text-shadow:0 0 20px rgba(255,255,255,.5);
+}
+
+.subtitle{
+    margin-top:20px;
+    font-size:20px;
+    opacity:.9;
+}
+
+.counter{
+    margin-top:35px;
+    display:inline-block;
+    padding:25px 40px;
+    border-radius:25px;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.18);
+}
+
+.counter h2{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+#days{
+    display:block;
+    font-size:60px;
+    font-weight:bold;
+    color:#ff5d94;
+}
+
+.counter p{
+    margin-top:10px;
+}
+
+.scroll-btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:15px 35px;
+    border-radius:40px;
+    text-decoration:none;
+    color:white;
+    background:#ff4d88;
+    transition:.35s;
+}
+
+.scroll-btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px #ff4d88;
+}
+
+/* GALERİ */
+
+#gallery{
+    padding:90px 8%;
+}
+
+.title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.photo{
+    width:100%;
+    border-radius:20px;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.photo:hover{
+    transform:scale(1.05);
+}/* ===========================
+   BUTONLAR
+=========================== */
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:70px 20px;
+}
+
+.btn{
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    padding:16px 34px;
+    border-radius:50px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    color:white;
+    font-size:17px;
+    transition:.35s;
+    border:1px solid rgba(255,255,255,.18);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    background:#ff4d88;
+    box-shadow:0 0 25px rgba(255,77,136,.5);
+}
+
+/* ===========================
+   POPUP
+=========================== */
+
+.popup{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.popup-box{
+    width:90%;
+    max-width:500px;
+    background:#1b1b1b;
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.15);
+    position:relative;
+}
+
+.popup-box h2{
+    font-size:34px;
+    margin-bottom:20px;
+}
+
+.popup-box p{
+    line-height:1.8;
+    font-size:18px;
+}
+
+.close,
+.giftClose{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* ===========================
+   LIGHTBOX
+=========================== */
+
+.lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.lightbox img{
+    width:90%;
+    max-width:900px;
+    border-radius:20px;
+}
+
+#closeLightbox{
+    position:absolute;
+    top:25px;
+    right:40px;
+    font-size:45px;
+    cursor:pointer;
+    color:white;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    padding:40px 20px;
+    text-align:center;
+    opacity:.75;
+    font-size:18px;
+}/* ===========================
+   ANİMASYONLAR
+=========================== */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero-content{
+    animation:fadeUp 1.2s ease;
+}
+
+.gallery img{
+    animation:fadeUp .8s ease;
+}
+
+.btn{
+    animation:fadeUp 1s ease;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff4d88;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#ff6ea5;
+}
+
+/* ===========================
+   MOBİL
+=========================== */
+
+@media(max-width:768px){
+
+.hero{
+    height:90vh;
+}
+
+.hero-content h1{
+    font-size:48px;
+}
+
+.subtitle{
+    font-size:17px;
+}
+
+.counter{
+    padding:20px;
+}
+
+#days{
+    font-size:46px;
+}
+
+.title{
+    font-size:30px;
+}
+
+.gallery{
+    grid-template-columns:1fr;
+}
+
+.buttons{
+    flex-direction:column;
+    align-items:center;
+}
+
+.btn{
+    width:90%;
+    text-align:center;
+}
+
+.popup-box{
+    padding:25px;
+}
+
+.popup-box h2{
+    font-size:28px;
+}
+
+.popup-box p{
+    font-size:16px;
+}
+
+}
+
+/* ===========================
+   SEÇİM RENGİ
+=========================== */
+
+::selection{
+    background:#ff4d88;
+    color:white;
+}
+
+/* ===========================
+   RESİMLER
+=========================== */
+
+img{
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+/* ===========================
+   VİDEO
+=========================== */
+
+video{
+    width:90%;
+    max-width:900px;
+    border-radius:20px;
+}
+
+/* ===========================
+   BİTİŞ
+=========================== */
